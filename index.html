@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clarté Overseas - Your trusted partner for import and export solutions.">
+    <title>Clarté Overseas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar (loaded by JS) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Image Section -->
+    <div class="hero-image-container">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" 
+             class="w-100 hero-image" 
+             alt="Global Trade Hero Image">
+    </div>
+
+    <!-- Add below the Hero Image Section -->
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80"
+                    class="img-fluid rounded shadow"
+                    alt="Cargo Ship Export Import">
+            </div>
+            <div class="col-md-6">
+                <h3>Global Reach</h3>
+                <p>
+                    We connect businesses across continents, ensuring your products reach every corner of the world with reliability and speed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="row align-items-center flex-md-row-reverse">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b1e6e?auto=format&fit=crop&w=800&q=80"
+                    class="img-fluid rounded shadow"
+                    alt="Logistics and Warehousing">
+            </div>
+            <div class="col-md-6">
+                <h3>Efficient Logistics</h3>
+                <p>
+                    Our streamlined logistics and warehousing solutions guarantee timely delivery and safe handling of your goods.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Glimpse Section -->
+    <section class="container my-5">
+        <h2 class="text-center">Who We Are</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="glimpse1.jpg" class="card-img-top" alt="Glimpse 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Our Mission</h5>
+                        <p class="card-text">Delivering quality products globally with trust and efficiency.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="glimpse2.jpg" class="card-img-top" alt="Glimpse 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Our Vision</h5>
+                        <p class="card-text">Connecting businesses worldwide with seamless import-export services.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="glimpse3.jpg" class="card-img-top" alt="Glimpse 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Our Values</h5>
+                        <p class="card-text">Integrity, quality, and customer satisfaction above all.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Section -->
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Why Choose Us?</h2>
+            <div class="row g-4 mt-4">
+                <div class="col-md-3">
+                    <div class="p-4 border rounded shadow-sm">
+                        <i class="bi bi-box-seam fs-1 text-primary"></i>
+                        <h5 class="mt-3">Quality Products</h5>
+                        <p>We prioritize quality to ensure customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 border rounded shadow-sm">
+                        <i class="bi bi-currency-dollar fs-1 text-primary"></i>
+                        <h5 class="mt-3">Affordable Pricing</h5>
+                        <p>Competitive rates without compromising quality.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 border rounded shadow-sm">
+                        <i class="bi bi-truck fs-1 text-primary"></i>
+                        <h5 class="mt-3">Timely Delivery</h5>
+                        <p>Efficient logistics to meet your deadlines.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 border rounded shadow-sm">
+                        <i class="bi bi-headset fs-1 text-primary"></i>
+                        <h5 class="mt-3">24/7 Support</h5>
+                        <p>Dedicated team to assist you anytime, anywhere.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal">Get Instant Quote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Instant Quote Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quoteModalLabel">Get an Instant Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Requirements</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (loaded by JS) -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

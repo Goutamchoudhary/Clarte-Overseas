@@ -1,0 +1,374 @@
+/* General styles */
+html, body {
+    height: 100%; /* Make sure the body takes up the full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Main content should push footer to the bottom if needed */
+main {
+    flex: 1; /* Make main content take up remaining space */
+}
+
+body {
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+/* Make sure main content is nicely spaced */
+main.container {
+    margin-top: 80px;
+    margin-bottom: 2rem; /* Ensure content ends above the footer */
+    opacity: 1;
+}
+
+/* Add a visible class when content is active */
+main.container.visible {
+    opacity: 1;
+}
+
+/* Section Headings */
+h1, h2 {
+    color: #333333; /* Dark gray for sharp contrast */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #003c82;
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #005db0;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #003c82;
+    border: 2px solid #003c82;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #003c82;
+    color: #ffffff;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003c82; /* Logo blue */
+    padding: 0 20px; /* Padding for space around navbar */
+    height: 80px; /* Fixed height for the navbar */
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Ensure it stays on top */
+}
+
+/* Logo styles */
+.navbar-brand img {
+    height: 280px; /* Fixed height for the logo */
+    width: auto; /* Keep the width proportional */
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Navbar link styles */
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 10px;
+    color: #003c82; /* Use the same blue as logo for links */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff7e5f; /* Color change on hover */
+}
+
+/* Navbar-toggler icon */
+.navbar-light .navbar-toggler-icon {
+    background-color: #003c82; /* Set the color for the toggler icon */
+}
+
+/* Navbar link active state */
+.navbar-nav .nav-link.active {
+    color: #0056b3; /* Change active link color to match logo hover */
+}
+
+.nav-tabs .nav-link.active {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Attractive gradient */
+    color: white;
+    font-weight: bold;
+    border-radius: 25px; /* Soft rounded edges */
+    border: none;
+    padding: 10px 20px; /* Add some padding for better spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease-in-out; /* Smooth animation on hover */
+}
+
+.nav-tabs .nav-link.active:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Product filtering animation */
+.product-grid {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+}
+
+#product-grid.visible {
+    opacity: 1; /* Make products visible smoothly */
+}
+
+.loading-spinner {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+.loading-spinner.active {
+    display: block;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px; /* Slightly taller cards */
+    object-fit: cover;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card h3 {
+    color: #333333;
+    font-size: 1.4rem; /* Larger heading */
+    margin: 0.5rem;
+    text-align: center; /* Center align the product name */
+}
+
+/* Product card hover effect */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel styles */
+.carousel-inner img {
+    margin-top: 56px; /* Space for the fixed navbar */
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* Company glimpse section */
+section.container h2 {
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
+/* USP Section */
+.bg-light h2 {
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.bg-light .p-4 {
+    background: white;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.bg-light .p-4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bg-light button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+}
+
+/* Distinct Contact Us heading style */
+.contact-header {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #005db0; /* Match primary theme color */
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+}
+
+/* Decorative underline */
+.contact-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Position below text */
+    left: 50%; /* Center align the underline */
+    transform: translateX(-50%);
+    width: 100px; /* Length of the underline */
+    height: 4px; /* Thickness of the underline */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient underline */
+    border-radius: 2px; /* Rounded edges for underline */
+}
+
+/* Ensure navbar color doesn't match heading */
+header {
+    background-color: #003c82; /* Deep blue */
+}
+
+/* Footer styles */
+footer {
+    margin-top: 40px; /* Add space above the footer */
+    background: #333;
+    background-color: #333333; /* Dark gray */
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #005db0; /* Accent color for headings */
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #005db0;
+}
+
+/* Fix form alignment */
+form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer p, footer form input, footer form textarea {
+    font-size: 0.9rem;
+}
+
+footer form input, footer form textarea {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+footer form button {
+    background: #ffc107;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer form button:hover {
+    background: #e0a800;
+}
+
+.hero-image-container {
+    margin-top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.hero-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 50vh;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .bg-light .p-4 {
+        padding: 1.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensure cards still look good on smaller screens */
+    }
+
+    .product-card img {
+        height: 200px; /* Reduce image height on smaller screens */
+    }
+}
