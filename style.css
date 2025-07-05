@@ -350,6 +350,237 @@ footer form button:hover {
     display: block;
 }
 
+/* Animated USP Section Title */
+.animated-gradient-text {
+  background: linear-gradient(90deg, #485563, #29323c);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.6s ease-in-out;
+  margin-bottom: 5rem !important; /* Force margin even if overridden */
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* USP Cards */
+.usp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertical centering */
+  text-align: center;
+  height: 100%;
+  min-height: 300px;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.usp-card h5 {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.usp-card p {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin-top: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* Hover Animation */
+.usp-card:hover h5 {
+  transform: translateY(-15px);
+}
+.usp-card:hover p {
+  opacity: 1;
+}
+
+/* Gradient Backgrounds for Cards */
+.bg-usp-1 {
+  background: linear-gradient(90deg, #d4af37, #ffecb3);
+}
+.bg-usp-2 {
+  background: linear-gradient(90deg, #c471f5, #fa71cd);
+}
+.bg-usp-3 {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+}
+.bg-usp-4 {
+  background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+}
+
+/* Modern Gradient Button */
+.btn-gradient {
+  background: linear-gradient(135deg, #0056b3, #7b1fa2);
+  border: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 3rem !important; /* Force margin even if overridden */
+  
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #003c82, #9c27b0);
+}
+
+/* USP Card Interactivity */
+.usp-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  height: 100%;
+  min-height: 300px;
+}
+
+.usp-icon,
+.usp-title {
+  font-size: 1.8rem;
+  transition: 0.4s ease;
+  margin-bottom: 0;
+  opacity: 1;
+}
+
+.usp-description {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  width: 80%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.usp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.usp-card:hover .usp-icon,
+.usp-card:hover .usp-title {
+  transform: translateY(-20px);
+}
+
+.usp-card:hover .usp-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.gradient-heading-1 {
+  background: linear-gradient(90deg, #654ea3, #eaafc8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.6s ease-in-out;
+  margin-top: 2rem !important; /* Force margin even if overridden */
+  margin-bottom: 7rem !important; /* Force margin even if overridden */
+  display: block;
+}
+
+.gradient-heading-2 {
+  background: linear-gradient(90deg, #ff6f61, #6a11cb); /* Orange to Purple */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.6s ease-in-out;
+}
+
+.gradient-heading-3 {
+  background: linear-gradient(90deg, #00dbde, #fc00ff); /* Purple to pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.6s ease-in-out;
+}
+
+.product-carousel-section {
+  margin-bottom: 3rem !important; /* Force margin even if overridden */
+}
+
+.category-card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%);
+  transition: filter 0.4s ease;
+}
+
+.category-card:hover img {
+  filter: brightness(30%);
+}
+
+.category-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.category-overlay h5 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Carousel buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(to right, #003c82, #7b2ff7);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: linear-gradient(to right, #7b2ff7, #003c82);
+}
+
+.carousel-btn.left {
+  left: -10px;
+}
+
+.carousel-btn.right {
+  right: -10px;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .carousel-inner img {

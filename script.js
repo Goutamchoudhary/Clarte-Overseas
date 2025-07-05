@@ -132,8 +132,27 @@ function filterProducts(category) {
     }, 500); // Duration matches CSS transition
 }
 
+// Scroll categories carousel
+function scrollCategories(direction) {
+  const container = document.getElementById('categories-carousel');
+  const scrollAmount = 320;
+  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
 // Load products initially
 document.addEventListener('DOMContentLoaded', () => {
     loadHTML();
     filterProducts("all"); // Display all products on page load
+
+    const text = "Connecting Continents, Delivering Trust";
+    const target = document.getElementById("animated-hero-text");
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            target.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 35); // Adjust speed here (ms)
+        }
+    }
+    typeWriter();
 });
