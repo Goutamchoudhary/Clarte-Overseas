@@ -568,9 +568,9 @@ form {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(to right, #003c82, #7b2ff7);
+  background: #fff;
   border: none;
-  color: #fff;
+  color: linear-gradient(to right, #003c82, #7b2ff7);
   font-size: 1.4rem;
   padding: 10px 15px;
   border-radius: 50%;

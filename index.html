@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Clarté Overseas is your trusted export partner from India, delivering quality products with integrity, speed, and global reach." />
+  <meta name="description" content="Clarté Overseas is your trusted export partner from India, delivering quality products with integrity, speed, transparency, and global reach. We trade in Biomass Pellets from Agricultural waste and sawdust/wood waste, Indian handicrafts, Fruits and Vegetables Powder." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="Indian exporters, Clarté Overseas, global trade, quality exports, Indian handicrafts, textiles, furniture, B2B exports" />
+  <meta name="keywords" content="Indian exporter, exporter from india, Clarté Overseas, Clarte Overseas, global trade, quality exports, Indian Handicrafts, Biomass Pellets, Pellets from Agricultural waste, Biomass Briquettes, Pellets from wood, Pellets from sawdust, Rice husk Pellets, Bagasse Pellets, Ground nut shell Pellets, Napier Grass Pellets,  Banana Powder, Pine Apple Powder, Guava Powder, Fruit Powder, Vegetable Powder, Onion Powder, Ginger Powder, Garlic Powder, Beetroot Powder" />
   <meta name="author" content="Clarté Overseas" />
   <meta property="og:title" content="Clarté Overseas | Trusted Export Partner from India" />
   <meta property="og:description" content="Connecting Continents, Delivering Trust. Explore Indian exports with integrity and reliability." />
@@ -21,6 +21,25 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Clarté Overseas",
+        "url": "https://clarteoverseas.com",
+        "logo": "https://clarteoverseas.com/logo.png",
+        "sameAs": [
+            "https://www.instagram.com/clarte_overseas"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-8800242156",
+            "contactType": "Query",
+            "areaServed": "Worldwide",
+            "availableLanguage": ["English", "French", "Spanish"]
+        }
+    }
+  </script>
 </head>
 <body>
     <!-- Navbar (loaded by JS) -->
@@ -41,7 +60,7 @@
             NOT JUST THE PRODUCTS<br>
         </h3>
     </div>
-</section>
+    </section>
 
     <!-- Global Reach Section -->
     <section class="container my-5 py-5">
@@ -81,40 +100,40 @@
             </button>
             <div id="categories-carousel" class="d-flex overflow-auto flex-nowrap scroll-smooth px-2">
             <!-- Category Card 1 -->
-            <div class="category-card text-white mx-3">
-                <img src="assets/images/category1.jpg" alt="Handicrafts" class="w-100 h-100 object-fit-cover" />
+            <div class="category-card text-white mx-3" onclick="redirectProductsCategory('bio-fuel')">
+                <img src="assets/images/biomass-pellets.webp" alt="Biomass Pellets" class="w-100 h-100 object-fit-cover" />
                 <div class="category-overlay">
-                <h5>Handicrafts</h5>
+                <h5>Biomass Pellets</h5>
                 </div>
             </div>
 
             <!-- Category Card 2 -->
-            <div class="category-card text-white mx-3">
-                <img src="assets/images/category2.jpg" alt="Textiles" class="w-100 h-100 object-fit-cover" />
+            <div class="category-card text-white mx-3" onclick="redirectProductsCategory('bio-fuel')">
+                <img src="assets/images/wood-briquettes.jpg" alt="Biomass Briquettes" class="w-100 h-100 object-fit-cover" />
                 <div class="category-overlay">
-                <h5>Textiles</h5>
+                <h5>Biomass Briquettes</h5>
                 </div>
             </div>
 
             <!-- Category Card 3 -->
-            <div class="category-card text-white mx-3">
-                <img src="assets/images/category3.jpg" alt="Furniture" class="w-100 h-100 object-fit-cover" />
+            <div class="category-card text-white mx-3" onclick="redirectProductsCategory('fruit-powder')">
+                <img src="assets/images/fruit-powder.png" alt="Fruit Powder" class="w-100 h-100 object-fit-cover" />
                 <div class="category-overlay">
-                <h5>Furniture</h5>
+                <h5>Fruit Powder</h5>
                 </div>
             </div>
             <!-- Category Card 3 -->
-            <div class="category-card text-white mx-3">
-                <img src="assets/images/category3.jpg" alt="Furniture" class="w-100 h-100 object-fit-cover" />
+            <div class="category-card text-white mx-3" onclick="redirectProductsCategory('veg-powder')">
+                <img src="assets/images/vegetables-powder.png" alt="Vegetable Powder" class="w-100 h-100 object-fit-cover" />
                 <div class="category-overlay">
-                <h5>Furniture</h5>
+                <h5>Vegetable Powder</h5>
                 </div>
-            </div>
+            </div>\
             <!-- Category Card 3 -->
-            <div class="category-card text-white mx-3">
-                <img src="assets/images/category3.jpg" alt="Furniture" class="w-100 h-100 object-fit-cover" />
+            <div class="category-card text-white mx-3" onclick="redirectProductsCategory('handicrafts')">
+                <img src="assets/images/wooden-handicrafts.png" alt="Wooden Handicrafts" class="w-100 h-100 object-fit-cover" />
                 <div class="category-overlay">
-                <h5>Furniture</h5>
+                <h5>Wooden Handicrafts</h5>
                 </div>
             </div>
 
@@ -179,13 +198,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/xwprzqrl" method="POST">
                 <div class="mb-3">
-                <label for="name" class="form-label">Your Name</label>
+                <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" name="name" required />
                 </div>
                 <div class="mb-3">
-                <label for="email" class="form-label">Your Email</label>
+                <label for="company" class="form-label">Company Name</label>
+                <input type="text" class="form-control" id="company" name="company" required />
+                </div>
+                <div class="mb-3">
+                <label for="email" class="form-label">Email ID</label>
                 <input type="email" class="form-control" id="email" name="email" required />
                 </div>
                 <div class="mb-3">
@@ -195,6 +218,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
+            <p id="form-status" class="mt-3"></p>
         </div>
         </div>
     </div>

@@ -76,16 +76,30 @@ function loadHTML() {
         });
 }
 
+function formatCategory(category) {
+    return category
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
 // Product data
 const products = [
-    { name: "Smartphone", image: "images/smartphone.jpg", category: "electronics" },
-    { name: "Laptop", image: "images/laptop.jpg", category: "electronics" },
-    { name: "T-Shirt", image: "images/tshirt.jpg", category: "fashion" },
-    { name: "Sneakers", image: "images/sneakers.jpg", category: "fashion" }
+    { name: "Biomass Pellets", image: "assets/images/biomass-pellets.webp", category: "bio-fuel" },
+    { name: "Biomass Briquettes", image: "assets/images/wood-briquettes.jpg", category: "bio-fuel" },
+    { name: "Banana Powder", image: "assets/images/banana-powder-2.png", category: "fruit-powder" },
+    { name: "Pineapple Powder", image: "assets/images/pineapple-powder.png", category: "fruit-powder" },
+    { name: "Apple Powder", image: "assets/images/apple-powder.png", category: "fruit-powder" },
+    { name: "Guava Powder", image: "assets/images/guava-powder.png", category: "fruit-powder" },
+    { name: "Onion Powder", image: "assets/images/onion-powder-2.png", category: "veg-powder" },
+    { name: "Ginger Powder", image: "assets/images/ginger-powder-2.png", category: "veg-powder" },
+    { name: "Garlic Powder", image: "assets/images/garlic-powder-2.png", category: "veg-powder" },
+    { name: "Beetroot Powder", image: "assets/images/beetroot-powder-2.png", category: "veg-powder" },
+    { name: "Wooden Handicrafts", image: "assets/images/wooden-handicrafts.png", category: "handicrafts" }
 ];
 
 // Filter and display products
-function filterProducts(category) {
+function filterProducts(category) {                                                                                                     
     const productGrid = document.getElementById("product-grid");
     const spinner = document.getElementById("loading-spinner");
     const tabs = document.querySelectorAll('.nav-tabs .nav-link');
@@ -119,7 +133,7 @@ function filterProducts(category) {
                     <img src="${product.image}" class="card-img-top" alt="${product.name}">
                     <div class="card-body">
                         <h5 class="card-title">${product.name}</h5>
-                        <p class="card-text">Category: ${product.category}</p>
+                        <p class="card-text">Category: ${formatCategory(product.category)}</p>
                     </div>
                 </div>
             `;
@@ -139,6 +153,11 @@ function scrollCategories(direction) {
   container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
 
+function redirectProductsCategory(category) {
+    window.location.href = `products.html`;
+    filterProducts(category);
+}
+
 // Load products initially
 document.addEventListener('DOMContentLoaded', () => {
     loadHTML();
@@ -155,4 +174,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     typeWriter();
+});
+
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+        status.innerHTML = "✅ Thank you! Your message has been sent.";
+        form.reset();
+    } else {
+        status.innerHTML = "❌ Oops! There was a problem sending your message.";
+    }
 });
