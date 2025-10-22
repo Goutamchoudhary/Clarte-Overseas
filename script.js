@@ -176,14 +176,13 @@ document.addEventListener('DOMContentLoaded', () => {
     typeWriter();
 });
 
-
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
     const data = new FormData(form);
-    const response = await fetch(form.action, {
-        method: form.method,
+    const response = await fetch(`https://formspree.io/f/xwprzqrl`, {
+        method: "POST",
         body: data,
         headers: { 'Accept': 'application/json' }
     });
